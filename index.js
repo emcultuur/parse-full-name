@@ -23,6 +23,9 @@ function changeWords(type, values) {
   }
   return false;
 }
+function words(type) {
+  return Words[type];
+}
 
 module.exports.changeWords = changeWords;
 

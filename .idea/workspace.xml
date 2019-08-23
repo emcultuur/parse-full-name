@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7aeb4b6c-f0d9-4b51-8715-36b3412fc1e0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/extended.spec.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/index.spec.js" afterDir="false" />
-    </list>
+    <list default="true" id="7aeb4b6c-f0d9-4b51-8715-36b3412fc1e0" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +18,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="305" column="22" selection-start-line="305" selection-start-column="22" selection-end-line="305" selection-end-column="22" />
+            <state relative-caret-position="30">
+              <caret line="2" column="94" selection-start-line="2" selection-start-column="94" selection-end-line="2" selection-end-column="94" />
             </state>
           </provider>
         </entry>
@@ -33,8 +27,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/extended.spec.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="39">
-              <caret line="6" column="2" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
+            <state relative-caret-position="240">
+              <caret line="16" column="3" lean-forward="true" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -42,8 +36,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+            <state relative-caret-position="330">
+              <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -81,8 +75,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/test/extended.spec.js" />
         <option value="$PROJECT_DIR$/index.js" />
+        <option value="$PROJECT_DIR$/test/extended.spec.js" />
       </list>
     </option>
   </component>
@@ -127,6 +121,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -176,44 +171,44 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1566566776659</updated>
-      <workItem from="1566566777763" duration="3495000" />
+      <workItem from="1566566777763" duration="3944000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="test_extended_spec_js - 2019.08.23 at 16h 17m 00s.xml">
+    <history-entry file="test_extended_spec_js - 2019.08.23 at 16h 28m 13s.xml">
       <configuration name="test/extended.spec.js" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="test_extended_spec_js - 2019.08.23 at 16h 20m 09s.xml">
+    <history-entry file="test_extended_spec_js - 2019.08.23 at 16h 29m 50s.xml">
       <configuration name="test/extended.spec.js" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="test_extended_spec_js - 2019.08.23 at 16h 23m 06s.xml">
+    <history-entry file="test_extended_spec_js - 2019.08.23 at 16h 29m 58s.xml">
       <configuration name="test/extended.spec.js" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="test_extended_spec_js - 2019.08.23 at 16h 23m 29s.xml">
+    <history-entry file="test_extended_spec_js - 2019.08.23 at 16h 30m 30s.xml">
       <configuration name="test/extended.spec.js" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="test_extended_spec_js - 2019.08.23 at 16h 24m 06s.xml">
+    <history-entry file="test_extended_spec_js - 2019.08.23 at 16h 30m 55s.xml">
       <configuration name="test/extended.spec.js" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="test_extended_spec_js - 2019.08.23 at 16h 24m 42s.xml">
+    <history-entry file="test_extended_spec_js - 2019.08.23 at 16h 31m 10s.xml">
       <configuration name="test/extended.spec.js" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="test_extended_spec_js - 2019.08.23 at 16h 25m 11s.xml">
+    <history-entry file="test_extended_spec_js - 2019.08.23 at 16h 31m 17s.xml">
       <configuration name="test/extended.spec.js" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="test_extended_spec_js - 2019.08.23 at 16h 25m 19s.xml">
+    <history-entry file="test_extended_spec_js - 2019.08.23 at 16h 31m 31s.xml">
       <configuration name="test/extended.spec.js" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="test_extended_spec_js - 2019.08.23 at 16h 25m 51s.xml">
+    <history-entry file="test_extended_spec_js - 2019.08.23 at 16h 32m 24s.xml">
       <configuration name="test/extended.spec.js" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="test_extended_spec_js - 2019.08.23 at 16h 26m 36s.xml">
+    <history-entry file="test_extended_spec_js - 2019.08.23 at 16h 32m 46s.xml">
       <configuration name="test/extended.spec.js" configurationId="mocha-javascript-test-runner" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3495000" />
+    <option name="totallyTimeSpent" value="3944000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="6" y="31" width="2363" height="1390" extended-state="0" />
@@ -225,12 +220,12 @@
       <window_info anchor="bottom" id="Docker" />
       <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.32973805" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39984593" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39984593" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -243,32 +238,7 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/test/extended.spec.js</url>
-          <line>6</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/index.js</url>
-          <line>304</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/index.spec.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="624">
@@ -283,17 +253,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="305" column="22" selection-start-line="305" selection-start-column="22" selection-end-line="305" selection-end-column="22" />
+        <state relative-caret-position="30">
+          <caret line="2" column="94" selection-start-line="2" selection-start-column="94" selection-end-line="2" selection-end-column="94" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/extended.spec.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="39">
-          <caret line="6" column="2" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
+        <state relative-caret-position="240">
+          <caret line="16" column="3" lean-forward="true" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
         </state>
       </provider>
     </entry>
