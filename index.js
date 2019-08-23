@@ -1,3 +1,40 @@
+/**
+ * adjusted version for the dutch market
+ * original by David Schnell-Davis <dschnelldavis@gmail.com> (http://github.com/dschnelldavis)
+ */
+
+
+let Words = {
+  titles:  ['dr','miss','mr','mrs','ms','prof','sir','frau','herr','hr',
+    'monsieur','captain','doctor','judge','officer','professor', 'ind', 'misc',
+    'mx'],
+  titleCombine: ' ',      // conbining titles is done with a space
+  suffix: ['esq','esquire','jr','jnr','sr','snr','2','ii','iii','iv',
+    'md','phd','j.d.','ll.m.','m.d.','d.o.','d.c.','p.c.','ph.d.'],
+  prefix: ['ab','bar','bin','da','dal','de','de la','del','della','der',
+    'di','du','ibn','l\'','la','le','san','st','st.','ste','ter','van',
+    'van de','van der','van den','vel','ver','vere','von'],
+};
+
+function changeWords(type, values) {
+  if (Words[type]) {
+    Words[type] = values;
+    return true;
+  }
+  return false;
+}
+
+module.exports.changeWords = changeWords;
+
+ /* @param nameToParse
+ * @param partToReturn
+ * @param fixCase
+ * @param stopOnError
+ * @param useLongLists
+ * @return {*|{nick: string, middle: string, last: string, title: string, suffix: string, error: Array, first: string}}
+ */
+
+
 exports.parseFullName = function parseFullName(
     nameToParse, partToReturn, fixCase, stopOnError, useLongLists
 ) {
@@ -8,7 +45,7 @@ exports.parseFullName = function parseFullName(
     nameParts = [], nameCommas = [null], partsFound = [],
     conjunctionList = ['&','and','et','e','of','the','und','y'],
     parsedName = {
-      title: '', first: '', middle: '', last: '', nick: '', suffix: '', error: []
+      title: '', first: '', middle: '', prefix: '', last: '', nick: '', suffix: '', error: []
     };
 
   // Validate inputs, or set to defaults
@@ -149,14 +186,17 @@ exports.parseFullName = function parseFullName(
       'the hon mrs','the hon ms','the hon sir','the very rev','toh puan','tun',
       'vice admiral','viscount','viscountess','wg cdr', 'ind', 'misc', 'mx'];
   } else {
-    suffixList = ['esq','esquire','jr','jnr','sr','snr','2','ii','iii','iv',
-      'md','phd','j.d.','ll.m.','m.d.','d.o.','d.c.','p.c.','ph.d.'];
-    prefixList = ['ab','bar','bin','da','dal','de','de la','del','della','der',
-      'di','du','ibn','l\'','la','le','san','st','st.','ste','ter','van',
-      'van de','van der','van den','vel','ver','vere','von'];
-    titleList = ['dr','miss','mr','mrs','ms','prof','sir','frau','herr','hr',
-      'monsieur','captain','doctor','judge','officer','professor', 'ind', 'misc',
-      'mx'];
+    suffixList = Words.suffix;
+      // ['esq','esquire','jr','jnr','sr','snr','2','ii','iii','iv',
+      // 'md','phd','j.d.','ll.m.','m.d.','d.o.','d.c.','p.c.','ph.d.'];
+    prefixList = Words.prefix;
+    // ['ab','bar','bin','da','dal','de','de la','del','della','der',
+    //   'di','du','ibn','l\'','la','le','san','st','st.','ste','ter','van',
+    //   'van de','van der','van den','vel','ver','vere','von'];
+    titleList = Words.titles;
+    // ['dr','miss','mr','mrs','ms','prof','sir','frau','herr','hr',
+    //   'monsieur','captain','doctor','judge','officer','professor', 'ind', 'misc',
+    //   'mx'];
   }
 
   // Nickname: remove and store parts with surrounding punctuation as nicknames
@@ -253,7 +293,7 @@ exports.parseFullName = function parseFullName(
     partsFound = [];
   } else if ( partsFoundCount > 1 ) {
     handleError(partsFoundCount + ' titles found');
-    parsedName.title = partsFound.join(', ');
+    parsedName.title = partsFound.join(Words.titleCombine);
     partsFound = [];
   }
   if ( !nameParts.length ) {
@@ -265,9 +305,10 @@ exports.parseFullName = function parseFullName(
   if ( nameParts.length > 1 ) {
     for ( i = nameParts.length-2; i >= 0; i-- ) {
       if ( prefixList.indexOf(nameParts[i].toLowerCase()) > -1 ) {
-        nameParts[i] = nameParts[i] + ' ' + nameParts[i+1];
-        nameParts.splice(i+1,1);
-        nameCommas.splice(i+1,1);
+        //nameParts[i] = nameParts[i] + ' ' + nameParts[i+1];
+        parsedName.prefix = (nameParts[i] + ' ' + parsedName.prefix).trim() ;
+        nameParts.splice(i, 1);
+        nameCommas.splice(i,1);
       }
     }
   }
