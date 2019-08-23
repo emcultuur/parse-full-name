@@ -23,11 +23,12 @@ function changeWords(type, values) {
   }
   return false;
 }
+module.exports.changeWords = changeWords;
 function words(type) {
   return Words[type];
 }
+module.exports.words = words;
 
-module.exports.changeWords = changeWords;
 
  /* @param nameToParse
  * @param partToReturn
