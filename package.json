@@ -28,6 +28,6 @@
   "homepage": "https://github.com/dschnelldavis/parse-full-name",
   "dependencies": {},
   "devDependencies": {
-    "mocha": "^6.2.0"
+    "mocha": "^9.2.2"
   }
 }

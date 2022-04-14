@@ -9,9 +9,10 @@ var verifyName = function(nameToCheck, partsToCheck) {
   assert.equal(nameToCheck.last, partsToCheck[3]);
   assert.equal(nameToCheck.nick, partsToCheck[4]);
   assert.equal(nameToCheck.suffix, partsToCheck[5]);
-  assert.equal(nameToCheck.error.length, partsToCheck[6].length);
-  for ( var i = 1, l = partsToCheck[6].length; i < l; i++ ) {
-    assert.equal(nameToCheck.error[i], partsToCheck[6][i]);
+  assert.equal(nameToCheck.prefix, partsToCheck[6]);
+  assert.equal(nameToCheck.error.length, partsToCheck[7].length);
+  for ( var i = 1, l = partsToCheck[7].length; i < l; i++ ) {
+    assert.equal(nameToCheck.error[i], partsToCheck[7][i]);
   }
 };
 
@@ -19,104 +20,105 @@ describe('parse-full-name', function() {
   describe('parseFullName', function() {
     it('parses first names', function() {
       verifyName(parseFullName('David Davis'),
-        ['','David','','Davis','','',[]]);
+        ['','David','','Davis','','','',[]]);
       verifyName(parseFullName('Davis, David'),
-        ['','David','','Davis','','',[]]);
+        ['','David','','Davis','','','',[]]);
     });
     it('parses last names', function() {
       verifyName(parseFullName('Gerald Böck'),
-        ['','Gerald','','Böck','','',[]]);
+        ['','Gerald','','Böck','','','',[]]);
       verifyName(parseFullName('Böck, Gerald'),
-        ['','Gerald','','Böck','','',[]]);
+        ['','Gerald','','Böck','','','', []]);
     });
     it('parses middle names', function() {
       verifyName(parseFullName('David William Davis'),
-        ['','David','William','Davis','','',[]]);
+        ['','David','William','Davis','','','',[]]);
       verifyName(parseFullName('Davis, David William'),
-        ['','David','William','Davis','','',[]]);
+        ['','David','William','Davis','','','',[]]);
     });
     it('parses last names including known prefixes', function() {
       verifyName(parseFullName('Vincent Van Gogh'),
-        ['','Vincent','','Van Gogh','','',[]]);
+        ['','Vincent','','Gogh','','','Van',[]]);
       verifyName(parseFullName('Van Gogh, Vincent'),
-        ['','Vincent','','Van Gogh','','',[]]);
+        ['','Vincent','','Gogh','','','Van',[]]);
       verifyName(parseFullName('Lorenzo de Médici'),
-        ['','Lorenzo','','de Médici','','',[]]);
+        ['','Lorenzo','','Médici','','','de', []]);
       verifyName(parseFullName('de Médici, Lorenzo'),
-        ['','Lorenzo','','de Médici','','',[]]);
+        ['','Lorenzo','','Médici','','','de',[]]);
       verifyName(parseFullName('Jüan de la Véña'),
-        ['','Jüan','','de la Véña','','',[]]);
+        ['','Jüan','la','Véña','','','de', []]);
       verifyName(parseFullName('de la Véña, Jüan'),
-        ['','Jüan','','de la Véña','','',[]]);
+        ['','Jüan','','Véña','','','de la', []]);
     });
     it('parses compound last names', function() {
       verifyName(parseFullName('Jüan Martinez de Lorenzo y Gutierez'),
-        ['','Jüan','Martinez','de Lorenzo y Gutierez','','',[]]);
+        ['','Jüan','Martinez','Lorenzo y Gutierez','','','de',[]]);
       verifyName(parseFullName('de Lorenzo y Gutierez, Jüan Martinez'),
-        ['','Jüan','Martinez','de Lorenzo y Gutierez','','',[]]);
+        ['','Jüan','Martinez','Lorenzo y Gutierez','','','de',[]]);
     });
     it('parses nicknames', function() {
       verifyName(parseFullName('Orenthal James "O. J." Simpson'),
-        ['','Orenthal','James','Simpson','O. J.','',[]]);
+        ['','Orenthal','James','Simpson','O. J.','','',[]]);
       verifyName(parseFullName("Orenthal 'O. J.' James Simpson"),
-        ['','Orenthal','James','Simpson','O. J.','',[]]);
+        ['','Orenthal','James','Simpson','O. J.','','',[]]);
       verifyName(parseFullName('(O. J.) Orenthal James Simpson'),
-        ['','Orenthal','James','Simpson','O. J.','',[]]);
+        ['','Orenthal','James','Simpson','O. J.','','',[]]);
       verifyName(parseFullName('Simpson, Orenthal James “O. J.”'),
-        ['','Orenthal','James','Simpson','O. J.','',[]]);
+        ['','Orenthal','James','Simpson','O. J.','','',[]]);
       verifyName(parseFullName("Simpson, Orenthal ‘O. J.’ James"),
-        ['','Orenthal','James','Simpson','O. J.','',[]]);
+        ['','Orenthal','James','Simpson','O. J.','','',[]]);
       verifyName(parseFullName('Simpson, [O. J.] Orenthal James'),
-        ['','Orenthal','James','Simpson','O. J.','',[]]);
+        ['','Orenthal','James','Simpson','O. J.','','',[]]);
     });
     it('parses known suffixes', function() {
       verifyName(parseFullName('Sammy Davis, Jr.'),
-        ['','Sammy','','Davis','','Jr.',[]]);
+        ['','Sammy','','Davis','','Jr.','',[]]);
       verifyName(parseFullName('Davis, Sammy, Jr.'),
-        ['','Sammy','','Davis','','Jr.',[]]);
+        ['','Sammy','','Davis','','Jr.','',[]]);
     });
     it('parses unknown suffixes', function() {
       verifyName(parseFullName('John P. Doe-Ray, Jr., CLU, CFP, LUTC'),
-        ['','John','P.','Doe-Ray','','Jr., CLU, CFP, LUTC',[]]);
+        ['','John','P.','Doe-Ray','','Jr., CLU, CFP, LUTC','',[]]);
       verifyName(parseFullName('Doe-Ray, John P., Jr., CLU, CFP, LUTC'),
-        ['','John','P.','Doe-Ray','','Jr., CLU, CFP, LUTC',[]]);
+        ['','John','P.','Doe-Ray','','Jr., CLU, CFP, LUTC','',[]]);
     });
     it('parses titles', function() {
       verifyName(parseFullName('Dr. John P. Doe-Ray, Jr.'),
-        ['Dr.','John','P.','Doe-Ray','','Jr.',[]]);
+        ['Dr.','John','P.','Doe-Ray','','Jr.','',[]]);
       verifyName(parseFullName('Dr. Doe-Ray, John P., Jr.'),
-        ['Dr.','John','P.','Doe-Ray','','Jr.',[]]);
+        ['Dr.','John','P.','Doe-Ray','','Jr.','',[]]);
       verifyName(parseFullName('Doe-Ray, Dr. John P., Jr.'),
-        ['Dr.','John','P.','Doe-Ray','','Jr.',[]]);
+        ['Dr.','John','P.','Doe-Ray','','Jr.','',[]]);
     });
     it('parses name parts in many different orders', function() {
+      console.log(parseFullName('Mr. Jüan Martinez (Martin) de Lorenzo y Gutierez Jr.'));
       verifyName(parseFullName(
         'Mr. Jüan Martinez (Martin) de Lorenzo y Gutierez Jr.'),
-        ['Mr.','Jüan','Martinez','de Lorenzo y Gutierez','Martin','Jr.',[]]);
+        ['Mr.','Jüan','Martinez','Lorenzo y Gutierez','Martin','Jr.','de',[]]);
       verifyName(parseFullName(
         'de Lorenzo y Gutierez, Mr. Jüan Martinez (Martin) Jr.'),
-        ['Mr.','Jüan','Martinez','de Lorenzo y Gutierez','Martin','Jr.',[]]);
+        ['Mr.','Jüan','Martinez','de Lorenzo y Gutierez','Martin','Jr.','',[]]);
       verifyName(parseFullName(
         'de Lorenzo y Gutierez, Mr. Jüan (Martin) Martinez Jr.'),
-        ['Mr.','Jüan','Martinez','de Lorenzo y Gutierez','Martin','Jr.',[]]);
+        ['Mr.','Jüan','Martinez','de Lorenzo y Gutierez','Martin','Jr.','',[]]);
       verifyName(parseFullName(
         'Mr. de Lorenzo y Gutierez, Jüan Martinez (Martin) Jr.'),
-        ['Mr.','Jüan','Martinez','de Lorenzo y Gutierez','Martin','Jr.',[]]);
+        ['Mr.','Jüan','Martinez','de Lorenzo y Gutierez','Martin','Jr.','',[]]);
       verifyName(parseFullName(
         'Mr. de Lorenzo y Gutierez, Jüan (Martin) Martinez Jr.'),
-        ['Mr.','Jüan','Martinez','de Lorenzo y Gutierez','Martin','Jr.',[]]);
+        ['Mr.','Jüan','Martinez','de Lorenzo y Gutierez','Martin','Jr.','',[]]);
       verifyName(parseFullName(
         'Mr. de Lorenzo y Gutierez Jr., Jüan Martinez (Martin)'),
-        ['Mr.','Jüan','Martinez','de Lorenzo y Gutierez','Martin','Jr.',[]]);
+        ['Mr.','Jüan','Martinez','de Lorenzo y Gutierez','Martin','Jr.','',[]]);
       verifyName(parseFullName(
         'Mr. de Lorenzo y Gutierez Jr., Jüan (Martin) Martinez'),
-        ['Mr.','Jüan','Martinez','de Lorenzo y Gutierez','Martin','Jr.',[]]);
+        ['Mr.','Jüan','Martinez','de Lorenzo y Gutierez','Martin','Jr.','',[]]);
       verifyName(parseFullName(
         'Mr. de Lorenzo y Gutierez, Jr. Jüan Martinez (Martin)'),
-        ['Mr.','Jüan','Martinez','de Lorenzo y Gutierez','Martin','Jr.',[]]);
+        ['Mr.','Jüan','Martinez','de Lorenzo y Gutierez','Martin','Jr.','',[]]);
       verifyName(parseFullName(
         'Mr. de Lorenzo y Gutierez, Jr. Jüan (Martin) Martinez'),
-        ['Mr.','Jüan','Martinez','de Lorenzo y Gutierez','Martin','Jr.',[]]);
+        ['Mr.','Jüan','Martinez','de Lorenzo y Gutierez','Martin','Jr.','',[]]);
     });
     it('automatically fixes all upper and all lowercase names', function() {
       verifyName(parseFullName(

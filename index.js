@@ -9,7 +9,7 @@ let Words = {
     'monsieur','captain','doctor','judge','officer','professor', 'ind', 'misc',
     'mx'],
   titleCombine: ' ',      // conbining titles is done with a space
-  suffix: ['esq','esquire','jr','jnr','sr','snr','2','ii','iii','iv',
+  suffix: ['esq','esquire','jr','jr','jnr','sr','snr','2','ii','iii','iv',
     'md','phd','j.d.','ll.m.','m.d.','d.o.','d.c.','p.c.','ph.d.'],
   prefix: ['ab','bar','bin','da','dal','de','de la','del','della','der',
     'di','du','ibn','l\'','la','le','san','st','st.','ste','ter','van',
